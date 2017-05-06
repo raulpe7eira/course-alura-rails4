@@ -13,17 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @products_by_name.each do |product| %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= product.amount %></td>
-      <td>
-        <%= button_to 'Remover', product, method: :delete, data: { confirm: "Tem certeza que deseja remover #{product.name}?" }, class: 'btn btn-danger' %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render partial: 'product', collection: @products_by_name %>
   </tbody>
 </table>
 
@@ -37,14 +27,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @products_by_price.each do |product| %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= product.amount %></td>
-    </tr>
-    <% end %>
+    <%= render partial: 'product', collection: @products_by_price %>
   </tbody>
 </table>
 

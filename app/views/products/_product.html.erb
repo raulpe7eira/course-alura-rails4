@@ -1,0 +1,9 @@
+<tr>
+  <td><%= product.name %></td>
+  <td><%= product.description %></td>
+  <td><%= product.price %></td>
+  <td><%= product.amount %></td>
+  <td>
+    <%= button_to 'Remover', product, method: :delete, data: { confirm: "Tem certeza que deseja remover #{product.name}?" }, class: 'btn btn-danger' %>
+  </td>
+</tr>

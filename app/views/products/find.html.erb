@@ -8,13 +8,6 @@
     </tr>
   </thead>
   <tbody>
-    <% @products_finded.each do |product| %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= product.amount %></td>
-    </tr>
-    <% end %>
+    <%= render partial: 'product', collection: @products_finded %>
   </tbody>
 </table>
