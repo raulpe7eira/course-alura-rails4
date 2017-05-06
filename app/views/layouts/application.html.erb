@@ -9,7 +9,15 @@
   </head>
 
   <body>
-    <%= nav_bar brand: 'Teeshop', brand_link: root_url %>
+    <%= nav_bar brand: 'Teeshop', brand_link: root_url do %>
+      <%= form_tag find_product_path,  method: :get,  role: 'search', class: 'navbar-form navbar-right' do %>
+        <div class="form-group">
+          <%= text_field_tag :name, @name_to_find, placeholder: 'Search', class: 'form-control' %>
+          <%= button_to 'Buscar', nil, class: 'btn btn-default' %>
+        </div>
+      <% end %>
+    <% end %>
+
     <div class="container">
 
       <%= yield %>

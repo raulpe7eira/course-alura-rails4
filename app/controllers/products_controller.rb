@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
     @products_by_price = Product.all.order(:price).limit 2
   end
 
+  def find
+    @name_to_find = params[:name]
+    @products_finded = Product.where "name like ?", "%#{@name_to_find}%"
+  end
+
   def create
     values = params.require(:product).permit :name, :description, :amount, :price
     product = Product.create values

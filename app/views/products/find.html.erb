@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products_finded.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= product.price %></td>
+      <td><%= product.amount %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
