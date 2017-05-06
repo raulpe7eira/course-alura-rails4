@@ -10,11 +10,20 @@ class ProductsController < ApplicationController
     @products_finded = Product.where "name like ?", "%#{@name_to_find}%"
   end
 
+  def new
+    @product = Product.new
+  end
+
   def create
     values = params.require(:product).permit :name, :description, :amount, :price
-    product = Product.create values
+    @product = Product.new values
 
-    redirect_to root_url
+    if @product.save
+      flash[:notice] = 'Produto salvo c/ sucesso!'
+      redirect_to root_url
+    else
+      render :new
+    end
   end
 
   def destroy
