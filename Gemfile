@@ -16,6 +16,8 @@ gem 'puma', '~> 3.0'
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+# Use 'twitter-bootstrap-rails' for integrate Bootstrap CSS toolkit
+gem 'twitter-bootstrap-rails'
 
 group :development do
   gem 'listen', '~> 3.0.5'
