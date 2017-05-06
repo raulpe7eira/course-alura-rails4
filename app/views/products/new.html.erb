@@ -1,11 +1,31 @@
-<html>
-  <body>
-    <%= form_for Product.new do |f| %>
-      Nome <input type="text" name="product[name]" /><br />
-      Descrição <textarea name="product[description]"></textarea><br/>
-      Quantidade <input type="number" name="product[amount]" step="1" /><br/>
-      Preço <input type="number" name="product[price]" step="0.01" /><br/>
-      <button type"submit">Criar</button>
-    <% end %>
-  </body>
-</html>
+<%= form_for Product.new do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 4, class: 'form-control' %>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :amount %>
+        <%= f.number_field :amount, step: 1, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :price %>
+        <%= f.number_field :price, step: 0.01, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <%= f.submit 'Criar o produto', class: 'btn btn-primary' %>
+
+<% end %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lojasdecamisetas</title>
+    <title>Teeshop</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= nav_bar brand: 'Teeshop', brand_link: root_url %>
+    <div class="container">
+
+      <%= yield %>
+
+    </div>
   </body>
 </html>
